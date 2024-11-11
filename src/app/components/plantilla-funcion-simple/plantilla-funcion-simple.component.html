@@ -1,0 +1,33 @@
+<div>
+    <h1>Plantilla funciones simple</h1>
+    <form #funcionesForm="ngForm">
+        <select name="selectfuncion" #selectfuncion class="form-control">
+            @for (funcion of funciones; track funcion){
+                <option value={{funcion}}>{{funcion}}</option>
+            }
+        </select>
+        <button (click)="mostrarPlantilla()">
+            Mostrar plantilla
+        </button>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Función</th>
+                <th>Turno</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (emp of empleados; track emp){
+                <tr>
+                    <td>{{emp.apellido}}</td>
+                    <td>{{emp.funcion}}</td>
+                    <td>{{emp.turno}}</td>
+                    <td>{{emp.salario}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
